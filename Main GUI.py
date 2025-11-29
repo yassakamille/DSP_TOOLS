@@ -3,9 +3,12 @@ from PIL import ImageTk, Image
 import requests
 from io import BytesIO
 from task1 import openform1
+from task2 import openform2
 from task3 import openform3
+from task4 import openform4
 from task5 import openform5
 from task6 import openform6
+from task7 import openform7
 from task8 import openform8
 def start():
     frame.pack_forget()
@@ -21,21 +24,21 @@ def back():
     frame1.pack_forget()
     frame.pack()
 def task1():
-   openform1()
+    openform1()
 def task2():
-       pass
+    openform2()
 def task3():
    openform3()
 def task4():
-   pass
+   openform4()
 def task5():
    openform5()
 def task6():
    openform6()
-def task7():
-   pass
+def task_7():
+    openform7()
 def task8():
- openform8()
+    openform8()
 
 window = tk.Tk()
 window.title("DSP TOOLS")
@@ -88,17 +91,17 @@ exit_button.place(x=210, y=10, width=90)
 #start
 t1 = tk.Button(frame2, text="Sampling", command=task1)
 t1.place(x=50, y=10, width=200)
-t2 = tk.Button(frame2, text="Arithmetic Operations", command= task2)
+t2 = tk.Button(frame2, text="Deterministic Operations", command= task2)
 t2.place(x=50, y=50, width=200)
 t3 = tk.Button(frame2, text="Quantization", command= task3)
 t3.place(x=50, y=90, width=200)
-t4 = tk.Button(frame2, text="DFT & IDFT", command= task4)
+t4 = tk.Button(frame2, text="Arithmetic Operations", command= task4)
 t4.place(x=50, y=130, width=200)
 t5 = tk.Button(frame2, text="Compute DCT & Remove DC", command= task5)
 t5.place(x=50, y=170, width=200)
-t6 = tk.Button(frame2, text="Operations", command= task6)
+t6 = tk.Button(frame2, text="Signal Manipulation", command= task6)
 t6.place(x=50, y=210, width=200)
-t7 = tk.Button(frame2, text="Time delay & Correlation", command= task7)
+t7 = tk.Button(frame2, text="DFT & IDFT", command= task_7)
 t7.place(x=50, y=250, width=200)
 t8 = tk.Button(frame2, text="Fast convolution & Fast correlation", command= task8)
 t8.place(x=50, y=290, width=200)

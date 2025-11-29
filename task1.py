@@ -3,9 +3,10 @@ from tkinter import ttk
 from tkinter import filedialog
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import warnings as wrng
+
 wrng.filterwarnings("ignore")
+
 
 def openform1():
     def plot_signal():
@@ -16,11 +17,11 @@ def openform1():
                     with open(input_file, 'r') as file:
                         signal_values = [float(line.strip().split()[1]) for line in file.readlines()]
                         return signal_values
-                except Exception as e:
+                except Exception:
                     print("error read from text only")
 
         data = read_signal_samples()
-        figure1 = plt.figure()
+        plt.figure()
 
         # Continuous representation
         plt.subplot(2, 1, 1)
@@ -56,13 +57,14 @@ def openform1():
             signal = amplitude * np.cos(2 * np.pi * analog_frequency * t + phase_shift)
 
         if signal_mode_var.get() == "Discrete":
+            print("asd")
             plt.clf()  # Clear the current plot
-            plt.stem(t, signal, basefmt=' ')
+            plt.stem(t, signal, linefmt='b-', markerfmt='bo', basefmt='r-')
             plt.xlabel('Sample')
             plt.ylabel('Amplitude')
             plt.title('Discrete Signal')
             plt.grid(True)
-            fig= plt
+            fig = plt
             fig.show()
 
             plt.close()
@@ -73,10 +75,11 @@ def openform1():
             plt.ylabel('Amplitude')
             plt.title('Continuous Signal')
             plt.grid(True)
-            fig2= plt
+            fig2 = plt
             fig2.show()
 
             plt.close()
+
     app = tk.Tk()
     app.title("Signal Generator")
 
@@ -127,4 +130,3 @@ def openform1():
 
     app.mainloop()
 # openform1()
-
